@@ -13,8 +13,7 @@ public class MyArrayList {
 			numberArray[j] = 11111;
 		}
 	}
-	public void insertSorted(int value) {//insert new values one by one
-		if(value<0||value>10000)return;
+	public void insertSorted(int value) {// This method should insert a new value but keep the data structure sorted in ascending order.		if(value<0||value>10000)return;
 		numberArray[i] = value;
 		i++;
 	}
@@ -45,13 +44,17 @@ public class MyArrayList {
 		}
 		return sum;
 	}
-	public void removeValue(int value){
+	public void removeValue(int value){//This method should remove all occurences of a value
 	
 	}
-	int indexOf(int value){
-	return 0;
+	int indexOf(int value){//This method should return the index of the first occurrence a value
+		for (int index = 0; index<numberArray.length; index++) {
+			if (numberArray[index] == value)
+			return index;		
+		}
+	return -1;
 	}
-	int size(){
+	int size(){//This method should return the total number of values that are stored in the array list.
 		int index, count=0;
 		for(index=0; index<numberArray.length; index++) {
 			if(numberArray[index] != 11111)

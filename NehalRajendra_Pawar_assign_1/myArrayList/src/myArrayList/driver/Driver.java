@@ -19,7 +19,9 @@ public class Driver
 		String number = "";
 		while (number != null) {
 			number = F1.readLine();
-			if (number == null || number == "")break;
+			if(number == null)break;
+			if(!number.matches("\\d+"))continue;
+			
 			Obj1.insertSorted(Integer.parseInt(number));
 		}
 		Obj1.sortArray();
