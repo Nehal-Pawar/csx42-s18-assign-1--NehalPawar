@@ -1,5 +1,6 @@
 package myArrayList.driver;
 import myArrayList.util.FileProcessor;
+import myArrayList.util.Results;
 import myArrayList.MyArrayList;
 public class Driver
 {
@@ -24,9 +25,16 @@ public class Driver
 			
 			Obj1.insertSorted(Integer.parseInt(number));
 		}
-		Obj1.sortArray();
 		int A = Obj1.sum();
 		System.out.println("\nsum is : " + A);
 		System.out.println(Obj1.toString());
+		System.out.println("\nsize"+Obj1.size());
+		Obj1.removeValue(345);
+		System.out.println(Obj1.toString());
+		System.out.println("\nsize"+Obj1.size());
+
+		Results results = new Results();
+		results.storeNewResult(INPUTFILE);
+		results.writeToFile(OUTPUTFILE);
 	}
 }
