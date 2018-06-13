@@ -26,9 +26,13 @@ public class MyArrayList {
 			newArray[j] = numberArray[j];
 		numberArray=newArray;
 		}
+		if(value>=0&&value<=10000){
 		numberArray[init] = value;
 		sortArray();
-		init++;
+		init++;}
+	}
+	public int[] getArray(){
+		return numberArray;
 	}
 	public void sortArray() {
 		Arrays.sort(numberArray);
