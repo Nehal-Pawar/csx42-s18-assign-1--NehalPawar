@@ -7,7 +7,11 @@ public class MyArrayList {
 	private int numberArray[] = new int[50];
 	int init = 0;
 	int  Size=50;
-	public MyArrayList() {//constructor to assign default value 
+
+	/**
+	 * This is constructor to assign default value 
+	 */
+	public MyArrayList() {
 		int j;
 		
 		for (j = 0; j<Size; j++) {
@@ -15,25 +19,35 @@ public class MyArrayList {
 		}	
 		Size=numberArray.length;
 	}
-	public void insertSorted(int value) {// This method should insert a new value but keep the data structure sorted in ascending order. If(value<0||value>10000)return;
+
+
+	/**
+	 * This method should resize the array on exceding capacity
+	 * and call the sort. 
+	 * @param value
+	 */
+	public void insertSorted(int value) {
 		if(init>=Size){
 		Size=Size+Size/2;
 		int newArray[] = new int[Size];
 		for (int j = 0; j<Size; j++)
 			newArray[j] = -11111;
-		//System.out.println("\nimplemented 1");
 		for (int j = 0; j < numberArray.length; j++) 
 			newArray[j] = numberArray[j];
 		numberArray=newArray;
 		}
-		if(value>=0&&value<=10000){
-		
+		if(value>=0&&value<=10000){		
 		InsSort(value);
-		//numberArray[init] = value;
-		//sortArray();
 		init++;
 		}
 	}
+
+	/**
+	 * This method should insert a new value 
+	 * but keeps the data structure sorted in ascending order. 
+	 * @param value
+	 */
+
 	public void InsSort(int value){
 		for(int index=0;index<Size;index++){
 			if(numberArray[index]==-11111){
@@ -51,27 +65,37 @@ public class MyArrayList {
 			}
 		}
 	}
+
+	 /**
+	 * This method return the private data member array
+	 * @return
+	 */
+
 	public int[] getArray(){
 		return numberArray;
 	}
-	public void sortArray() {
-		Arrays.sort(numberArray);
-	}
+	
+	 /**
+	 * This method return the concatenated string to of array for display
+	 * @return
+	 */
+
 	public String toString() {
 		int index;
 		String Concatenate="";
-		//int count=0;
-		//int PrintnumberArray[]=new int[size()];
 		for (index = 0; index<Size; index++) {
 			if (numberArray[index] != -11111){
-			Concatenate=Concatenate+numberArray[index] + " ";
-			//System.out.print(numberArray[index] + " ");
-			//PrintnumberArray[count]=numberArray[index];
-			//count++;
+			Concatenate=Concatenate+numberArray[index] + " ";			
 			}
 		}
 		return Concatenate;
 	}
+
+	 /**
+	 * This method return the sum of the array integers 
+	 * @return
+	 */
+
 	public int sum() {
 		int index, sum = 0;
 		for (index = 0; index<Size; index++) {
@@ -81,23 +105,44 @@ public class MyArrayList {
 		}
 		return sum;
 	}
-	public void removeValue(int value){//This method should remove all occurences of a value
+
+	/**
+	 * This method should remove all occurences of a value
+	 * @param value
+	 */
+	public void removeValue(int value){
 		int indexof=indexOf(value);
+		while(indexof!=(-1)){
 		for (int index = indexof; index<Size-1; index++) {
 			numberArray[index]=numberArray[index+1];			
-		}
-		//System.out.println(toString());
+		}		
 		numberArray[Size-1]=-11111;
 		Size--;
+		indexof=indexOf(value);
+		}
 	}
-	public int indexOf(int value){//This method should return the index of the first occurrence a value
+
+	/**
+	 * //This method should return the index of the first occurrence a value
+	 * @param value
+	 * @return
+	 */
+	public int indexOf(int value){
 		for (int index = 0; index<numberArray.length; index++) {
 			if (numberArray[index] == value)
 			return index;		
 		}
 	return -1;
 	}
-	public int size(){//This method should return the total number of values that are stored in the array list.
+
+	/**
+	 * //This method should return the total number of values that 
+	 * are stored in the array list.
+	 * @param value
+	 * @return
+	 */
+
+	public int size(){
 		int index, count=0;
 		for(index=0; index<Size; index++) {
 			if(numberArray[index] != -11111)

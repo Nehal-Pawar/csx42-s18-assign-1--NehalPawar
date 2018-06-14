@@ -7,7 +7,6 @@ public class Driver
 {
 	public static void main(String[] args)
 	{
-		// command line validation is missing here. FIXME!
 		if (2 != args.length)
 		{
 			System.err.println("incorrect args passed, Expected <input.txt> <output.txt>. \n exiting \n");

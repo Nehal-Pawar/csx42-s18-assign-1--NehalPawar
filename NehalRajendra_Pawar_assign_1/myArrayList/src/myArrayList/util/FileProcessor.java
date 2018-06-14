@@ -12,14 +12,20 @@ public class FileProcessor {
 			F = new FileReader(InputFileName);
 			BR = new BufferedReader(F);
 		}
-		catch (Exception e) { System.out.println("Error" + e.toString()); }
+		catch (Exception e) {
+		 System.out.println("Error" + e.toString());
+		System.exit(1);
+		 }
 	}
 	public String readLine() {
 		String line = null;
 		try {
 			line = BR.readLine();
 		}
-		catch (Exception e) { System.out.println("Error while reading file"); }
+		catch (Exception e) { 
+		System.out.println("Error while reading file");
+		System.exit(1);
+		 }
 		return line;
 	}
 }
