@@ -11,25 +11,45 @@ public class MyArrayList {
 		int j;
 		
 		for (j = 0; j<Size; j++) {
-			numberArray[j] = 11111;
+			numberArray[j] = -11111;
 		}	
 		Size=numberArray.length;
 	}
-	public void insertSorted(int value) {// This method should insert a new value but keep the data structure sorted in ascending order.		if(value<0||value>10000)return;
+	public void insertSorted(int value) {// This method should insert a new value but keep the data structure sorted in ascending order. If(value<0||value>10000)return;
 		if(init>=Size){
 		Size=Size+Size/2;
 		int newArray[] = new int[Size];
 		for (int j = 0; j<Size; j++)
-			newArray[j] = 11111;
+			newArray[j] = -11111;
 		//System.out.println("\nimplemented 1");
 		for (int j = 0; j < numberArray.length; j++) 
 			newArray[j] = numberArray[j];
 		numberArray=newArray;
 		}
 		if(value>=0&&value<=10000){
-		numberArray[init] = value;
-		sortArray();
-		init++;}
+		
+		InsSort(value);
+		//numberArray[init] = value;
+		//sortArray();
+		init++;
+		}
+	}
+	public void InsSort(int value){
+		for(int index=0;index<Size;index++){
+			if(numberArray[index]==-11111){
+				numberArray[index]=value;
+				break;
+			}
+			if(value>numberArray[index])
+				continue;
+			else{		
+				for(int i=init-1;i>=index;i--){
+				numberArray[i+1]=numberArray[i];
+				}
+				numberArray[index]=value;
+				break;
+			}
+		}
 	}
 	public int[] getArray(){
 		return numberArray;
@@ -43,7 +63,7 @@ public class MyArrayList {
 		//int count=0;
 		//int PrintnumberArray[]=new int[size()];
 		for (index = 0; index<Size; index++) {
-			if (numberArray[index] != 11111){
+			if (numberArray[index] != -11111){
 			Concatenate=Concatenate+numberArray[index] + " ";
 			//System.out.print(numberArray[index] + " ");
 			//PrintnumberArray[count]=numberArray[index];
@@ -55,7 +75,7 @@ public class MyArrayList {
 	public int sum() {
 		int index, sum = 0;
 		for (index = 0; index<Size; index++) {
-			if (numberArray[index] != 11111) {
+			if (numberArray[index] != -11111) {
 				sum += numberArray[index];
 			}
 		}
@@ -67,10 +87,10 @@ public class MyArrayList {
 			numberArray[index]=numberArray[index+1];			
 		}
 		//System.out.println(toString());
-		numberArray[Size-1]=11111;
+		numberArray[Size-1]=-11111;
 		Size--;
 	}
-	int indexOf(int value){//This method should return the index of the first occurrence a value
+	public int indexOf(int value){//This method should return the index of the first occurrence a value
 		for (int index = 0; index<numberArray.length; index++) {
 			if (numberArray[index] == value)
 			return index;		
@@ -80,7 +100,7 @@ public class MyArrayList {
 	public int size(){//This method should return the total number of values that are stored in the array list.
 		int index, count=0;
 		for(index=0; index<Size; index++) {
-			if(numberArray[index] != 11111)
+			if(numberArray[index] != -11111)
 				count =count+ 1;
 		}
 		return count;

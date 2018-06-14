@@ -26,6 +26,8 @@ public class Driver
 			
 			Obj1.insertSorted(Integer.parseInt(number));
 		}
+		System.out.println(Obj1.toString());
+
 		/*int A = Obj1.sum();
 		System.out.println("\nsum is : " + A);
 		System.out.println(Obj1.toString());
