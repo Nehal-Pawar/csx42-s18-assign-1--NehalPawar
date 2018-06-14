@@ -26,20 +26,14 @@ public class Driver
 			
 			Obj1.insertSorted(Integer.parseInt(number));
 		}
-		System.out.println(Obj1.toString());
 
-		/*int A = Obj1.sum();
-		System.out.println("\nsum is : " + A);
-		System.out.println(Obj1.toString());
-		System.out.println("\nsize"+Obj1.size());
-		Obj1.removeValue(345);
-		System.out.println(Obj1.toString());
-		System.out.println("\nsize"+Obj1.size());
-		*/
+
+		int A = Obj1.sum();		
 		Results results = new Results();
+		results.storeNewResult("The sum of all the values in the array list is:"+A);
 		MyArrayListTest myArrayListTest = new MyArrayListTest();
 		myArrayListTest.testMe(Obj1 , results);
-		//results.storeNewResult(INPUTFILE);
+		
 		results.writeToFile(OUTPUTFILE);
 	}
 }

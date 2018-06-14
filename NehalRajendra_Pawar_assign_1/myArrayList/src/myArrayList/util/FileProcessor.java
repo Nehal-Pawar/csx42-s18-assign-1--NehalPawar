@@ -19,7 +19,7 @@ public class FileProcessor {
 		try {
 			line = BR.readLine();
 		}
-		catch (Exception e) { System.out.println("Error"); }
+		catch (Exception e) { System.out.println("Error while reading file"); }
 		return line;
 	}
 }

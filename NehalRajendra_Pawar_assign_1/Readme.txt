@@ -16,7 +16,7 @@ ant -buildfile src/build.xml run -Darg0=FIRST -Darg1=SECOND -Darg2=THIRD
 -----------------------------------------------------------------------
 
 ## To create tarball for submission
-ant -buildfile src/build.xml tarzip or tar -zcvf firstName_secondName_assign_number.tar.gz firstName_secondName_assign_number
+ant -buildfile src/build.xml tarzip or tar -zcvf NehalRajendra_Pawar_assign_1.tar.gz NehalRajendra_Pawar_assign_1
 
 -----------------------------------------------------------------------
 
@@ -29,12 +29,26 @@ grade of 0 for the involved assignment for my first offense and that I
 will receive a grade of F for the course for any additional
 offense.”
 
-[Date: ]
+[Date: 6/14/2018]
 
 -----------------------------------------------------------------------
 
 Provide justification for Data Structures used in this assignment in
 term of Big O complexity (time and/or space)
+
+Time complexity for insertSorted()
+O(n^2)
+Time complexity for removeValue()
+O(n)
+
+Time complexity for indexOf()
+O(n)
+
+Time complexity for size()
+O(n)
+
+Time complexity for sum()
+O(n)
 
 -----------------------------------------------------------------------
 
